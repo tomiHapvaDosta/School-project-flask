@@ -1,0 +1,75 @@
+/* Indicators Page Specific CSS */
+
+.progress-bar {
+    transition: width 1.5s ease-out;
+}
+
+.card {
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    color: #232526;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-body>.d-flex {
+    align-items: flex-start;
+}
+
+.card .fas {
+    transition: all 0.3s ease;
+}
+
+.card:hover .fas {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon styling */
+.card i {
+    font-size: 2rem;
+}
+
+/* Progress bar styling */
+.progress {
+    background: #f0f0f0;
+    border-radius: 1rem;
+    height: 12px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    border-radius: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Statistics cards */
+.card.text-center {
+    transition: all 0.3s ease;
+}
+
+.card.text-center:hover h3 {
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}

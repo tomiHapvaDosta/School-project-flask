@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% block title %}About Us | VibrantSchool{% endblock %}
+{% block head %}
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, rgba(255, 209, 102, 0.1) 0%, rgba(6, 214, 160, 0.1) 100%);
+        min-height: 400px;
+        border-radius: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 3rem 2rem;
+    }
+
+    .team-card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 2px solid rgba(255, 209, 102, 0.2);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .team-card:hover {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #ffd166;
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(255, 209, 102, 0.2);
+    }
+
+    .team-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffd166 0%, #fcb900 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin: 0 auto 1rem;
+        box-shadow: 0 8px 20px rgba(255, 209, 102, 0.3);
+    }
+
+    .milestone {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .milestone-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #ffd166;
+    }
+
+    .milestone-text {
+        color: #232526;
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+
+    .value-card {
+        background: rgba(255, 255, 255, 0.7);
+        border-left: 4px solid #ffd166;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+        background: rgba(255, 255, 255, 0.9);
+        border-left-color: #06d6a0;
+        box-shadow: 0 8px 20px rgba(255, 209, 102, 0.2);
+    }
+
+    .value-icon {
+        font-size: 2rem;
+        color: #ffd166;
+        margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #ffd166, #06d6a0);
+        border-radius: 2px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!-- About Hero -->
+<div class="container mt-5 mb-5">
+    <div class="about-hero glass">
+        <div>
+            <h1 class="display-2 fw-bold mb-3">About VibrantSchool</h1>
+            <p class="lead text-muted mb-0">Transforming education through innovation, collaboration, and excellence</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Story Section -->
+<div class="container section-padding">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+            <h2 class="fw-bold mb-3" style="font-size: 2rem;">Our Story</h2>
+            <p class="text-muted mb-3">
+                VibrantSchool was founded with a simple yet powerful mission: to revolutionize the way schools
+                manage and track their performance indicators. We believe that every student deserves access to
+                world-class educational tools and resources.
+            </p>
+            <p class="text-muted mb-3">
+                Our team of passionate educators, developers, and innovators came together to create a platform
+                that combines cutting-edge technology with real-world educational needs. We're committed to making
+                school management easier, more transparent, and more effective.
+            </p>
+            <p class="text-muted">
+                Since our inception, we've helped hundreds of schools improve their operations, enhance student
+                engagement, and achieve better educational outcomes. Join us in transforming education, one school
+                at a time.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <div class="glass rounded-4 p-5">
+                <i class="fas fa-lightbulb fa-5x" style="color: #ffd166; margin-bottom: 1rem;"></i>
+                <h4 class="fw-bold mb-2">Our Vision</h4>
+                <p class="text-muted mb-4">
+                    To be the leading platform for educational excellence, empowering schools with data-driven
+                    insights and innovative tools to nurture the next generation of leaders.
+                </p>
+                <hr>
+                <h4 class="fw-bold mb-2 mt-4">Our Mission</h4>
+                <p class="text-muted mb-0">
+                    To provide schools with intuitive, secure, and impactful solutions that streamline operations,
+                    enhance communication, and support student success.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Milestones Section -->
+<div class="container section-padding">
+    <h2 class="section-title">Our Milestones</h2>
+    <div class="row g-4 text-center">
+        <div class="col-md-3 col-6">
+            <div class="milestone">
+                <div class="milestone-number">500+</div>
+                <div class="milestone-text">Schools Using</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="milestone">
+                <div class="milestone-number">50K+</div>
+                <div class="milestone-text">Active Users</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="milestone">
+                <div class="milestone-number">99.9%</div>
+                <div class="milestone-text">Uptime</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="milestone">
+                <div class="milestone-number">24/7</div>
+                <div class="milestone-text">Support</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Core Values Section -->
+<div class="container section-padding">
+    <h2 class="section-title">Our Core Values</h2>
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Excellence</h4>
+                <p class="text-muted mb-0">
+                    We are committed to delivering the highest quality solutions that exceed expectations
+                    and drive meaningful impact in education.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="value-card" style="border-left-color: #06d6a0;">
+                <div class="value-icon" style="color: #06d6a0;">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Collaboration</h4>
+                <p class="text-muted mb-0">
+                    We believe in the power of teamwork and partnership. Together, we create solutions
+                    that transform schools and empower educators.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="value-card" style="border-left-color: #ef476f;">
+                <div class="value-icon" style="color: #ef476f;">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Security & Trust</h4>
+                <p class="text-muted mb-0">
+                    Your data is sacred to us. We maintain the highest security standards and transparency
+                    in everything we do.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="value-card" style="border-left-color: #118ab2;">
+                <div class="value-icon" style="color: #118ab2;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Education First</h4>
+                <p class="text-muted mb-0">
+                    Every decision we make is guided by what's best for students, teachers, and
+                    educational institutions.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="container section-padding">
+    <div class="glass rounded-4 p-5 text-center">
+        <h2 class="fw-bold mb-3">Join Our Community</h2>
+        <p class="text-muted mb-4">
+            Be part of the educational revolution. Join hundreds of schools already transforming their
+            operations with VibrantSchool.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            {% if current_user.is_authenticated %}
+            <a href="/download" class="btn btn-success btn-lg">
+                <i class="fas fa-download me-2"></i>Download Resources
+            </a>
+            {% else %}
+            <a href="/signup" class="btn btn-warning btn-lg">
+                <i class="fas fa-user-plus me-2"></i>Get Started Free
+            </a>
+            {% endif %}
+            <a href="/indicators" class="btn btn-outline-dark btn-lg">
+                <i class="fas fa-chart-line me-2"></i>View Indicators
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Home -->
+<div class="container section-padding text-center">
+    <a href="/" class="btn btn-outline-dark btn-lg">
+        <i class="fas fa-arrow-left me-2"></i>Back to Home
+    </a>
+</div>
+{% endblock %}

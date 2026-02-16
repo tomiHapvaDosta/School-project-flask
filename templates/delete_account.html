@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% block title %}Delete Account | VibrantSchool{% endblock %}
+{% block head %}
+<style>
+    .delete-warning {
+        background: linear-gradient(135deg, rgba(239, 71, 111, 0.1) 0%, rgba(239, 71, 111, 0.05) 100%);
+        border: 2px solid rgba(239, 71, 111, 0.3);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .warning-icon {
+        font-size: 3rem;
+        color: #ef476f;
+        margin-bottom: 1rem;
+    }
+
+    .delete-btn {
+        background: linear-gradient(135deg, #ef476f 0%, #dd3f5d 100%);
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(239, 71, 111, 0.3);
+    }
+
+    .delete-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(239, 71, 111, 0.4);
+    }
+
+    .cancel-btn {
+        background: linear-gradient(135deg, #ffd166 0%, #fcb900 100%);
+        color: #232526;
+        border: none;
+        padding: 0.75rem 1.75rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
+    }
+
+    .cancel-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 209, 102, 0.4);
+        color: #232526;
+        text-decoration: none;
+    }
+
+    .consequence-list {
+        background: rgba(255, 255, 255, 0.7);
+        border-left: 4px solid #ef476f;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        margin: 1.5rem 0;
+    }
+
+    .consequence-item {
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .consequence-item i {
+        color: #ef476f;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+    }
+
+    .consequence-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .center-content {
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="center-content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center mb-4">
+                    <i class="fas fa-exclamation-triangle warning-icon"></i>
+                    <h1 class="fw-bold mb-2">Delete Account</h1>
+                    <p class="text-muted">This action cannot be undone</p>
+                </div>
+
+                <div class="delete-warning">
+                    <h5 class="fw-bold text-danger mb-3">
+                        <i class="fas fa-shield-alt me-2"></i>Warning: Permanent Action
+                    </h5>
+                    <p>Deleting your account will permanently remove all your data from VibrantSchool. This includes:
+                    </p>
+
+                    <div class="consequence-list">
+                        <div class="consequence-item">
+                            <i class="fas fa-times"></i>
+                            <span><strong>All personal information</strong> - Name, email, and profile data</span>
+                        </div>
+                        <div class="consequence-item">
+                            <i class="fas fa-times"></i>
+                            <span><strong>All activity history</strong> - Login records and actions</span>
+                        </div>
+                        <div class="consequence-item">
+                            <i class="fas fa-times"></i>
+                            <span><strong>All preferences</strong> - Settings and configurations</span>
+                        </div>
+                        <div class="consequence-item">
+                            <i class="fas fa-times"></i>
+                            <span><strong>Access to resources</strong> - You won't be able to download files</span>
+                        </div>
+                    </div>
+
+                    <p class="mb-0"><strong>This action is irreversible.</strong> You will need to create a new account
+                        to regain access.</p>
+                </div>
+
+                <div class="glass rounded-4 p-4 mb-4">
+                    <h5 class="fw-bold mb-3">Are you absolutely sure?</h5>
+                    <p class="text-muted mb-4">Please confirm that you want to permanently delete your VibrantSchool
+                        account.</p>
+
+                    <form method="POST" class="text-center">
+                        <button type="submit" class="delete-btn me-2">
+                            <i class="fas fa-trash-alt me-2"></i>Yes, Delete My Account
+                        </button>
+                        <a href="/" class="cancel-btn">
+                            <i class="fas fa-arrow-left me-2"></i>Cancel
+                        </a>
+                    </form>
+                </div>
+
+                <div class="text-center text-muted">
+                    <p>Need help? <a href="/" class="text-decoration-none" style="color: #ffd166;">Contact Support</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

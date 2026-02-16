@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% block title %}Download Resources | VibrantSchool{% endblock %}
+{% block head %}
+<style>
+    .download-hero {
+        background: linear-gradient(135deg, rgba(255, 209, 102, 0.1) 0%, rgba(6, 214, 160, 0.1) 100%);
+        min-height: 300px;
+        border-radius: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .download-card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 2px solid rgba(255, 209, 102, 0.2);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .download-card:hover {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #ffd166;
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(255, 209, 102, 0.2);
+    }
+
+    .download-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .download-card:hover .download-icon {
+        transform: scale(1.15);
+        animation: pulse 0.6s ease-in-out;
+    }
+
+    .download-btn {
+        background: linear-gradient(135deg, #ffd166 0%, #fcb900 100%);
+        color: #232526;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
+    }
+
+    .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 209, 102, 0.4);
+        color: #232526;
+        text-decoration: none;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1.15);
+        }
+
+        50% {
+            transform: scale(1.25);
+        }
+    }
+
+    .feature-badge {
+        display: inline-block;
+        background: rgba(6, 214, 160, 0.1);
+        color: #06d6a0;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<!-- Download Hero -->
+<div class="container mt-5 mb-5">
+    <div class="download-hero glass">
+        <div>
+            <h1 class="display-3 fw-bold mb-3">Download Center</h1>
+            <p class="lead text-muted">Access all your VibrantSchool resources and materials</p>
+        </div>
+    </div>
+</div>
+
+<!-- Download Options -->
+<div class="container section-padding">
+    <h2 class="text-center fw-bold mb-5">Available Resources</h2>
+
+    <div class="row g-4">
+        <!-- Test.txt File -->
+        <div class="col-lg-4 col-md-6">
+            <div class="download-card" onclick="downloadFile('/download-file', 'test.txt')" style="cursor: pointer;">
+                <div class="text-center">
+                    <i class="fas fa-file-alt download-icon" style="color: #ffd166;"></i>
+                    <h4 class="fw-bold mb-3">Test Document</h4>
+                    <div>
+                        <span class="feature-badge">Text File</span>
+                    </div>
+                    <p class="text-muted mb-4">Access the test.txt file with all your data and information.</p>
+                    <button onclick="downloadFile('/download-file', 'test.txt')" class="download-btn"
+                        style="cursor: pointer; border: none;">
+                        <i class="fas fa-download me-2"></i>Download Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation -->
+        <div class="col-lg-4 col-md-6">
+            <div class="download-card">
+                <div class="text-center">
+                    <i class="fas fa-book download-icon" style="color: #06d6a0;"></i>
+                    <h4 class="fw-bold mb-3">Documentation</h4>
+                    <div>
+                        <span class="feature-badge">PDF</span>
+                    </div>
+                    <p class="text-muted mb-4">Complete user guide and best practices for VibrantSchool.</p>
+                    <button class="download-btn" disabled>
+                        <i class="fas fa-clock me-2"></i>Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Data -->
+        <div class="col-lg-4 col-md-6">
+            <div class="download-card">
+                <div class="text-center">
+                    <i class="fas fa-database download-icon" style="color: #ef476f;"></i>
+                    <h4 class="fw-bold mb-3">Export Data</h4>
+                    <div>
+                        <span class="feature-badge">CSV</span>
+                    </div>
+                    <p class="text-muted mb-4">Export your raw data in CSV format for analysis and reporting.</p>
+                    <button class="download-btn" disabled>
+                        <i class="fas fa-clock me-2"></i>Coming Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Section -->
+<div class="container section-padding">
+    <div class="glass rounded-4 p-5">
+        <h3 class="fw-bold mb-4">
+            <i class="fas fa-info-circle me-2" style="color: #ffd166;"></i>About Downloads
+        </h3>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-2">Secure & Private</h5>
+                <p class="text-muted">All your downloads are encrypted and secure. Only you can access these files.</p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-2">Multiple Formats</h5>
+                <p class="text-muted">Download in various formats (PDF, CSV, TXT) to suit your needs.</p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-2">Always Updated</h5>
+                <p class="text-muted">Resources are regularly updated with the latest information and features.</p>
+            </div>
+            <div class="col-md-6">
+                <h5 class="fw-bold mb-2">24/7 Access</h5>
+                <p class="text-muted">Download anytime from anywhere. No restrictions or time limitations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Home -->
+<div class="container section-padding text-center">
+    <a href="/" class="btn btn-outline-dark btn-lg">
+        <i class="fas fa-arrow-left me-2"></i>Back to Home
+    </a>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/download-handler.js') }}"></script>
+{% endblock %}

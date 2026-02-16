@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Login | VibrantSchool{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block content %}
+<div class="container section-padding">
+    <div class="row g-4 align-items-center">
+        <!-- Left Column - Benefits -->
+        <div class="col-lg-6">
+            <h1 class="fw-bold mb-4" style="font-size: 2.5rem;">Welcome Back</h1>
+            <p class="lead text-muted mb-4">Access your school dashboard and manage indicators in real-time.</p>
+            <div class="feature-list">
+                <div class="feature-item d-flex gap-3 mb-4">
+                    <div class="icon-box">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Real-Time Analytics</h5>
+                        <p class="text-muted">Monitor performance metrics as they happen</p>
+                    </div>
+                </div>
+                <div class="feature-item d-flex gap-3 mb-4">
+                    <div class="icon-box">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Secure Access</h5>
+                        <p class="text-muted">Enterprise-grade security for your peace of mind</p>
+                    </div>
+                </div>
+                <div class="feature-item d-flex gap-3 mb-4">
+                    <div class="icon-box">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">24/7 Support</h5>
+                        <p class="text-muted">Our team is always here to help you succeed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column - Login Form -->
+        <div class="col-lg-6">
+            <div class="card glass shadow-heavy">
+                <div class="card-body p-5">
+                    <h3 class="mb-4 text-center fw-bold">Sign In</h3>
+                    <form method="POST" action="/login">
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email"
+                                placeholder="you@example.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control form-control-lg" id="password" name="password"
+                                placeholder="••••••••" required>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                            <label class="form-check-label" for="remember">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-muted mb-0">Don't have an account? <a href="/signup"
+                                    class="fw-bold text-decoration-none" style="color: #ffd166;">Create one</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}

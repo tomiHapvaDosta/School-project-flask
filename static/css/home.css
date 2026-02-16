@@ -1,0 +1,60 @@
+/* Home Page Specific CSS */
+
+.hero-section {
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section h1 {
+    letter-spacing: -1px;
+}
+
+.interactive-card {
+    position: relative;
+    perspective: 1000px;
+}
+
+.interactive-card:hover {
+    transform: translateY(-12px) scale(1.05) !important;
+}
+
+.benefit-item {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 16px rgba(255, 209, 102, 0.1);
+}
+
+.btn-outline-dark {
+    border: 2px solid #232526;
+    color: #232526;
+    font-weight: 700;
+}
+
+.btn-outline-dark:hover {
+    background: #232526;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(35, 37, 38, 0.2);
+}
+
+@media (max-width: 768px) {
+    .interactive-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+    }
+}
