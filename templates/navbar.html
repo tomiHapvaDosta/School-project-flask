@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg shadow-sm py-2">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-            <i class="fas fa-graduation-cap me-2" style="color:#ffd166;"></i> VibrantSchool
+            <i class="fas fa-graduation-cap me-2" style="color:#ffd166;"></i> Задачко
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/">Начало</a>
                 </li>
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <button onclick="downloadFile('/download-file', 'test.txt')" class="nav-link"
                         style="background: none; border: none; cursor: pointer; padding: 0.7rem 1.2rem;">
-                        <i class="fas fa-download me-1"></i>Download
+                        <i class="fas fa-download me-1"></i>Изтегли Задачко
                     </button>
                 </li>
                 <li class="nav-item d-flex align-items-center ms-2">
@@ -30,22 +30,22 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="/logout">
-                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                <i class="fas fa-sign-out-alt me-2"></i>Излез от акаунта си
                             </a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item text-danger" href="/delete-account">
-                                <i class="fas fa-trash-alt me-2"></i>Delete Account
+                                <i class="fas fa-trash-alt me-2"></i>Изтрий акаунт
                             </a></li>
                     </ul>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/login">Влез в акаунт</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/signup">Sign Up</a>
+                    <a class="nav-link" href="/signup">Регистрирай се</a>
                 </li>
                 {% endif %}
             </ul>
