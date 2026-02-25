@@ -33,10 +33,6 @@ def load_user(user_id):
 def home():
     return render_template('home.html')
 
-@app.route('/indicators')
-def indicators():
-    return render_template('indicators.html')
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
