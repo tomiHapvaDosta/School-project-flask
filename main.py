@@ -16,7 +16,7 @@ login_manager.login_view = 'login'
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=False, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
 
     def set_password(self, password):
@@ -115,17 +115,6 @@ def download_file():
 def about():
     return render_template('about.html')
 
-@app.route('/delete-account', methods=['GET', 'POST'])
-@login_required
-def delete_account():
-    if request.method == 'POST':
-        user = current_user
-        db.session.delete(user)
-        db.session.commit()
-        logout_user()
-        flash('Your account has been deleted successfully.', 'warning')
-        return redirect(url_for('home'))
-    return render_template('delete_account.html')
 
 if __name__ == '__main__':
     if not os.path.exists('site.db'):
